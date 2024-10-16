@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\TrueSpot\TrueSpot.csproj" />
     <ProjectReference Include="..\TrueSpot\TrueSpot.csproj" />
   </ItemGroup>
 
