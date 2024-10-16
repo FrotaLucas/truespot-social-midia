@@ -21,7 +21,9 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Install Workloads
-      run: dotnet workload restore
+      run: |
+        dotnet workload install Microsoft.iOS.Sdk.net8.0_18.0
+        dotnet workload restore
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
