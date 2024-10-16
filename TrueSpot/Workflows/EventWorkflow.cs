@@ -2,7 +2,7 @@
 
 namespace TrueSpot.Workflows
 {
-    internal class EventWorkflow
+    public class EventWorkflow
     {
         public TrueSpotEvent CreateEvent(TrueSpotUser user, string title, string description, DateTime startdate, DateTime? enddate = null)
         {
