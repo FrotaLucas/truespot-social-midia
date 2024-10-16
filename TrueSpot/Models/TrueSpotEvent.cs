@@ -1,6 +1,6 @@
 ﻿namespace TrueSpot.Models
 {
-    public class Event
+    public class TrueSpotEvent
     {
         public Guid Id { get; set; }
 
