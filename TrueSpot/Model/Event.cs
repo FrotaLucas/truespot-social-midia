@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TrueSpot.Model
+﻿namespace TrueSpot.Model
 {
     public class Event
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int UserId { get; set; }
-        public string Title { get; set; }
+        public Guid CreatorUserId { get; set; }
+        public string Title { get; set; } = default!;
+        public string Description { get; set; } = default!;
 
-        public string Description { get; set; }
-
-        public DateTime Date {  get; set; }
+        public DateTime StartDate { get; set; } = default!;
+        public DateTime? EndDate { get; set; }
     }
 }

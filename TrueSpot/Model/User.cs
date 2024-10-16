@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TrueSpot.Model
+﻿namespace TrueSpot.Model
 {
     public class User
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public int Age { get; set; }
-        
+        public Guid Id { get; set; }
+        public string Name { get; set; } = default!;
+        public string Email { get; set; } = default!;
+        public DateTime DateOfBirth { get; set; }
     }
 }
