@@ -17,5 +17,16 @@ namespace TrueSpot.Workflows
                 EndDate = enddate
             };
         }
+
+        public void AddUserToEvent(TrueSpotEvent @event, TrueSpotUser user) 
+        {
+            if (@event.AttendingUsers.Any(u => u.Id == user.Id))
+                return;
+
+            if (@event.CreatorUserId == user.Id)
+                return;
+
+             @event.AttendingUsers.Add(user);
+        }
     }
 }
