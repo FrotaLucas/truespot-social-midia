@@ -1,4 +1,4 @@
-﻿namespace TrueSpot.Model
+﻿namespace TrueSpot.Models
 {
     public class User
     {
