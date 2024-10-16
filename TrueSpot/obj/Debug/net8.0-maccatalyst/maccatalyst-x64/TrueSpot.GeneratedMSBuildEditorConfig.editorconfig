@@ -12,35 +12,35 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TrueSpot
-build_property.ProjectDir = D:\Projects_Visual_Studio\TrueSpot\TrueSpot\TrueSpot\
+build_property.ProjectDir = C:\Projects\truespot-social-midia\TrueSpot\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[D:/Projects_Visual_Studio/TrueSpot/TrueSpot/TrueSpot/App.xaml]
+[C:/Projects/truespot-social-midia/TrueSpot/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrueSpot.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[D:/Projects_Visual_Studio/TrueSpot/TrueSpot/TrueSpot/AppShell.xaml]
+[C:/Projects/truespot-social-midia/TrueSpot/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrueSpot.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/Projects_Visual_Studio/TrueSpot/TrueSpot/TrueSpot/MainPage.xaml]
+[C:/Projects/truespot-social-midia/TrueSpot/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrueSpot.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[D:/Projects_Visual_Studio/TrueSpot/TrueSpot/TrueSpot/Resources/Styles/Colors.xaml]
+[C:/Projects/truespot-social-midia/TrueSpot/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrueSpot.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[D:/Projects_Visual_Studio/TrueSpot/TrueSpot/TrueSpot/Resources/Styles/Styles.xaml]
+[C:/Projects/truespot-social-midia/TrueSpot/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrueSpot.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
