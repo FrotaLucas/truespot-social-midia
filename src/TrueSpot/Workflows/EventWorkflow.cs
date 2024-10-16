@@ -18,9 +18,9 @@ namespace TrueSpot.Workflows
             };
         }
 
-        public void AddUserToEvent(TrueSpotEvent @event, TrueSpotUser user) 
+        public void AddUserToEvent(TrueSpotEvent @event, TrueSpotUser user)
         {
-            //TODO: Add a return value that indicates what happened in this method.
+            // TODO: Add a return value that indicates what happened in this method.
             // i.e. Was the user successfuly added, and if not, explain the reason (user added already, user is creator).
             if (@event.AttendingUsers.Any(u => u.Id == user.Id))
                 return;
@@ -28,7 +28,7 @@ namespace TrueSpot.Workflows
             if (@event.CreatorUserId == user.Id)
                 return;
 
-             @event.AttendingUsers.Add(user);
+            @event.AttendingUsers.Add(user);
         }
     }
 }
