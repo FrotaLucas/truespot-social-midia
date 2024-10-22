@@ -140,6 +140,7 @@ namespace TrueSpot.Tests
         [Fact]
         public void Should_Not_Create_Event_With_EndDate_Before_StartDate()
         {
+            //Arrange
             var creatorUser = new TrueSpotUser();
             string testTitle = "Title";
             string testDescription = "Description";
@@ -148,12 +149,9 @@ namespace TrueSpot.Tests
 
             var workFlow = new EventWorkflow();
 
-            if (endDate < startDate)
-            {
-                throw new Exception("End Date can not be before start date.");
-            }
+            Action act = () => workFlow.CreateEvent(creatorUser, testTitle, testDescription, startDate, endDate);
+            act.Should().Throw<InvalidOperationException>("End date cannot be before start date");
 
-            var testEvent = workFlow.CreateEvent(creatorUser, testTitle, testDescription, startDate, endDate);
         }
     }
 }
