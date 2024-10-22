@@ -10,18 +10,18 @@ namespace TrueSpot.Tests
         public void Should_Create_New_Event_Without_Enddate()
         {
             var user = new TrueSpotUser { Id = Guid.NewGuid() };
-            string testTile = "Test Title";
+            string testTitle = "Test Title";
             string testDescription = "Test Description";
             var startDate = DateTime.Now;
 
             var workflow = new EventWorkflow();
 
-            var tsEvent = workflow.CreateEvent(user, testTile, testDescription, startDate);
+            var tsEvent = workflow.CreateEvent(user, testTitle, testDescription, startDate);
 
             tsEvent.Should().NotBeNull();
             tsEvent.Id.Should().NotBeEmpty();
             tsEvent.CreatorUserId.Should().Be(user.Id);
-            tsEvent.Title.Should().Be(testTile);
+            tsEvent.Title.Should().Be(testTitle);
             tsEvent.Description.Should().Be(testDescription);
             tsEvent.StartDate.Should().Be(startDate);
             tsEvent.EndDate.Should().BeNull();
@@ -31,19 +31,19 @@ namespace TrueSpot.Tests
         public void Should_Create_New_Event_With_Enddate()
         {
             var user = new TrueSpotUser { Id = Guid.NewGuid() };
-            string testTile = "Test Title";
+            string testTitle = "Test Title";
             string testDescription = "Test Description";
             var startDate = DateTime.Now;
             var endDate = startDate.AddHours(5);
 
             var workflow = new EventWorkflow();
 
-            var tsEvent = workflow.CreateEvent(user, testTile, testDescription, startDate, endDate);
+            var tsEvent = workflow.CreateEvent(user, testTitle, testDescription, startDate, endDate);
 
             tsEvent.Should().NotBeNull();
             tsEvent.Id.Should().NotBeEmpty();
             tsEvent.CreatorUserId.Should().Be(user.Id);
-            tsEvent.Title.Should().Be(testTile);
+            tsEvent.Title.Should().Be(testTitle);
             tsEvent.Description.Should().Be(testDescription);
             tsEvent.StartDate.Should().Be(startDate);
             tsEvent.EndDate.Should().Be(endDate);
@@ -54,14 +54,14 @@ namespace TrueSpot.Tests
         {
             var creatorUser = new TrueSpotUser { Id = Guid.NewGuid() };
 
-            string testTile = "Test Title";
+            string testTitle = "Test Title";
             string testDescription = "Test Description";
             var startDate = DateTime.Now;
             var endDate = startDate.AddHours(5);
 
             var workflow = new EventWorkflow();
 
-            var tsEvent = workflow.CreateEvent(creatorUser, testTile, testDescription, startDate, endDate);
+            var tsEvent = workflow.CreateEvent(creatorUser, testTitle, testDescription, startDate, endDate);
 
             var attendeeUser = new TrueSpotUser { Id = Guid.NewGuid() };
 
@@ -77,14 +77,14 @@ namespace TrueSpot.Tests
         {
             var creatorUser = new TrueSpotUser { Id = Guid.NewGuid() };
 
-            string testTile = "Test Title";
+            string testTitle = "Test Title";
             string testDescription = "Test Description";
             var startDate = DateTime.Now;
             var endDate = startDate.AddHours(5);
 
             var workflow = new EventWorkflow();
 
-            var tsEvent = workflow.CreateEvent(creatorUser, testTile, testDescription, startDate, endDate);
+            var tsEvent = workflow.CreateEvent(creatorUser, testTitle, testDescription, startDate, endDate);
 
             var attendeeUser = new TrueSpotUser { Id = Guid.NewGuid() };
 
@@ -118,6 +118,40 @@ namespace TrueSpot.Tests
             workflow.AddUserToEvent(tsEvent, creatorUser);
 
             tsEvent.AttendingUsers.Should().NotContain(creatorUser);
+        }
+
+        [Fact]
+        public void Should_Not_Create_Event_With_Empty_Title_Or_Empty_Description()
+        {
+            var creatorUser = new TrueSpotUser { Id = Guid.NewGuid() };
+
+            string testTitle = "Title";
+            string testDescription = "Description";
+            var startDate = DateTime.Now;
+            var endDate = startDate.AddHours(5);
+
+            var workFlow = new EventWorkflow();
+            var testEvent = workFlow.CreateEvent(creatorUser, testTitle, testDescription, startDate, endDate);
+
+            testEvent.Title.Should().NotBeNull();
+            testEvent.Description.Should().NotBeNull();
+        }
+
+        [Fact]
+        public void Should_Not_Create_Event_With_EndDate_Before_StartDate()
+        {
+            //Arrange
+            var creatorUser = new TrueSpotUser();
+            string testTitle = "Title";
+            string testDescription = "Description";
+            var startDate = DateTime.Now;
+            var endDate = startDate.AddHours(-5);
+
+            var workFlow = new EventWorkflow();
+
+            Action act = () => workFlow.CreateEvent(creatorUser, testTitle, testDescription, startDate, endDate);
+            act.Should().Throw<InvalidOperationException>("End date cannot be before start date");
+
         }
     }
 }
