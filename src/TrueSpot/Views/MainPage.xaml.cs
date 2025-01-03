@@ -6,13 +6,14 @@ namespace TrueSpot
 {
     public partial class MainPage : ContentPage
     {
-        private readonly EventWorkflow eventWorkflow;
-        private List<TrueSpotEvent> events = new List<TrueSpotEvent>();
+        private readonly TrueSpotState state;
 
-        public MainPage(EventWorkflow eventWorkflow)
+        public MainPage(TrueSpotState state)
         {
             InitializeComponent();
-            this.eventWorkflow = eventWorkflow;
+            this.state = state;
+
+            BindingContext = state;
         }
 
         private async void OnCounterClicked(object sender, EventArgs e)

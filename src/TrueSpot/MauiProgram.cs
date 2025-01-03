@@ -26,6 +26,7 @@ namespace TrueSpot
 
         public static MauiAppBuilder RegisterServices(this MauiAppBuilder mauiAppBuilder)
         {
+            mauiAppBuilder.Services.AddSingleton<TrueSpotState>();
             mauiAppBuilder.Services.AddTransient<EventWorkflow>();
 
             // More services registered here.

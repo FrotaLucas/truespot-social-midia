@@ -4,21 +4,22 @@
              xmlns:models="clr-namespace:TrueSpot.Models"
              x:Class="TrueSpot.Views.CreateEvent"
              Title="Create Event">
-    <ContentPage.BindingContext>
-        <models:TrueSpotEvent />
-    </ContentPage.BindingContext>
     <VerticalStackLayout Spacing="10" Margin="10">
         <Entry x:Name="EventTitle"
-               Placeholder="Event Title"
-               Text="{Binding Title}"/>
+               Placeholder="Event Title"/>
         <Editor x:Name="EventDescription"
-                Placeholder="Event Description"
-                Text="{Binding Description}"/>
-        <DatePicker x:Name="StartDate"
-                    Date="{Binding StartDate}"/>
-        <TimePicker x:Name="StartTime"/>
-        <DatePicker x:Name="EndDate"
-                    Date="{Binding EndDate}"/>
-        <TimePicker x:Name="EndTime"/>
+                Placeholder="Event Description" />
+        <DatePicker x:Name="StartDate"/>
+        <TimePicker x:Name="StartTime" />
+        <DatePicker x:Name="EndDate"/>
+        <TimePicker x:Name="EndTime" />
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
+            <Button Text="Save"
+                    Clicked="SaveButton_Clicked" />
+
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="DeleteButton_Clicked" />
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
