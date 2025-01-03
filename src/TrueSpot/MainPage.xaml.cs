@@ -1,12 +1,18 @@
-﻿namespace TrueSpot
+﻿using TrueSpot.Models;
+using TrueSpot.Workflows;
+
+namespace TrueSpot
 {
     public partial class MainPage : ContentPage
     {
+        private readonly EventWorkflow eventWorkflow;
         private int count = 0;
+        private List<TrueSpotEvent> events = new List<TrueSpotEvent>();
 
-        public MainPage()
+        public MainPage(EventWorkflow eventWorkflow)
         {
             InitializeComponent();
+            this.eventWorkflow = eventWorkflow;
         }
 
         private void OnCounterClicked(object sender, EventArgs e)

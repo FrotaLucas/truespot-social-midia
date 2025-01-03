@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using TrueSpot.Workflows;
 
 namespace TrueSpot
 {
@@ -9,6 +10,7 @@ namespace TrueSpot
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .RegisterServices()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -20,6 +22,15 @@ namespace TrueSpot
 #endif
 
             return builder.Build();
+        }
+
+        public static MauiAppBuilder RegisterServices(this MauiAppBuilder mauiAppBuilder)
+        {
+            mauiAppBuilder.Services.AddTransient<EventWorkflow>();
+
+            // More services registered here.
+
+            return mauiAppBuilder;
         }
     }
 }
