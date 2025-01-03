@@ -1,4 +1,4 @@
-namespace TrueSpot;
+namespace TrueSpot.Views;
 
 public partial class AboutPage : ContentPage
 {

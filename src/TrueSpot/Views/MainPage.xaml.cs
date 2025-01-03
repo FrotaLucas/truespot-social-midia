@@ -1,8 +1,4 @@
-﻿using TrueSpot.Models;
-using TrueSpot.Views;
-using TrueSpot.Workflows;
-
-namespace TrueSpot
+﻿namespace TrueSpot.Views
 {
     public partial class MainPage : ContentPage
     {
@@ -16,7 +12,7 @@ namespace TrueSpot
             BindingContext = state;
         }
 
-        private async void OnCounterClicked(object sender, EventArgs e)
+        private async void Create_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(CreateEvent));
         }

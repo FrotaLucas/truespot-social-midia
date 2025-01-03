@@ -4,7 +4,7 @@
              xmlns:models="clr-namespace:TrueSpot.Models"
              x:Class="TrueSpot.Views.CreateEvent"
              Title="Create Event">
-    <VerticalStackLayout Spacing="10" Margin="10">
+    <VerticalStackLayout Spacing="10" Margin="20">
         <Entry x:Name="EventTitle"
                Placeholder="Event Title"/>
         <Editor x:Name="EventDescription"
