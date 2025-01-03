@@ -7,6 +7,11 @@ namespace TrueSpot.Workflows
         public TrueSpotEvent CreateEvent(TrueSpotUser user, string title, string description, DateTime startdate, DateTime? enddate = null)
         {
             // TODO: Save to a database where the ID is created automatically.
+            if (enddate < startdate)
+            {
+                throw new InvalidOperationException("End date cannot be before start date");
+            }
+
             return new TrueSpotEvent
             {
                 Id = Guid.NewGuid(),
